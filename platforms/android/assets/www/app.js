@@ -9,7 +9,7 @@ app.config(["$stateProvider", "$urlRouterProvider",
         $state
             .state("login", {
                 "url": "/login",
-                "templateUrl": "views/login.html",
+                "templateUrl": "views/home.html",
                 "controller": "LoginCtrl"
             })
             .state("home", {
