@@ -14,13 +14,12 @@
             <input type="text" id="inputnn" class="form-control" placeholder="Nickname" required>
             <label for="inputp" class="sr-only">Password</label>
             <input type="password" id="inputp" class="form-control" placeholder="Password" required>
-            <button class="btn btn-lg btn-primary btn-block" type="submit" id="reg_button">Register</button>
-            <div id="register_alert1" class="alert alert-success" role="alert" style="display:none">Registered</div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit" id="reg_button" ng-click="register()">Register</button>
             <div id="register_alert2" class="alert alert-danger" role="alert" style="display:none"></div>
         </div>
     </div>
     <!-- /container -->
-    <script type="text/javascript" src="js/requests.js"></script>
+    <script type="text/javascript" src="app.js"></script>
 </body>
 
 </html>

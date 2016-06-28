@@ -49,3 +49,52 @@ var app = {
 };
 
 app.initialize();
+
+/*function addToList(){
+    var id = document.getElementById("id").value;
+    var name = document.getElementById("name").value;
+    var lastname = document.getElementById("lastname").value;
+    
+    var info={
+        id: id,
+        name: name,
+        lastname: lastname
+    };
+    
+    var list = localStorage.getItem("list")  ? JSON.parse(localStorage.getItem("list")):[]; 
+    list.push(info);
+    
+    localStorage.setItem("list", JSON.stringify(list));
+    
+    alert("se ha ingresado un valor");
+}
+
+document.getElementById("registerButton").addEventListener("click", addToList,false); //el false solo acepta un click
+
+function showList(){
+    var list = localStorage.getItem("list")  ? localStorage.getItem("list"):[]; 
+    alert(list);   
+}
+
+document.getElementById("showButton").addEventListener("click", showList,false); //el false solo acepta un click
+
+function clearStorage(){
+    localStorage.removeItem("list");
+}
+
+document.getElementById("clearButton").addEventListener("click", clearStorage,false); //el false solo acepta un click
+
+*/
+
+function getUsers(){
+    var xhr= new XMLHttpRequest();
+    xhr.onreadystatechange = function(){
+        if (xhr.status=== 200 && xhr.readyState ===4){
+            alert(xhr.responseText);
+        }
+    };
+    
+    xhr.open("GET","http://localhost:10000/user",true);
+    xhr.send();
+};
+document.getElementById("butt").addEventListener("click", getUsers,false);
