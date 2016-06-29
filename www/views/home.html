@@ -1,5 +1,13 @@
 <html>
     <head>
+        <style>
+            ul > li {
+                display:inline-block;
+                margin-left: 25%;       /* This is when the drop down box appears */
+                width: auto;
+                position: relative;
+            }
+        </style>
     </head>
     <body>
         <div class="container">
@@ -9,7 +17,7 @@
                 </div>
                 <div class="panel-body  style="position: absolute; height:100%;"">
                 Panel content
-                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                 </div>
                 
                 <div class="panel-footer">
@@ -23,25 +31,19 @@
                         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Left Align">
                             <span class="glyphicon glyphicon-cloud-upload" aria-hidden="true"></span>                           
                         </button>
+                        
                         <ul class="dropdown-menu">
-                            <td>
-                                <button type="button" class="btn btn-default">
-                                    <span class="glyphicon glyphicon-film" aria-hidden="true"></span>
-                                <button>
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-default">
-                                    <span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
-                                </button>
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-default">
-                                    <span class="glyphicon glyphicon-music" aria-hidden="true"></span>
-                                </button>
-                            </td>
+                            <li>
+                                <div class="btn-group" role="group">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>
+                                    </button>
+                                </div>
+                            </li>
                         </ul>
-                      
-                                    
                         <button type="button" class="btn btn-default" aria-label="Left Align">
                             <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
                         </button>
