@@ -1,38 +1,76 @@
 <html>
-    <head>
-    </head>
-    <body>
-        <div class="container">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Instagram</h3>
-                </div>
-                <div class="panel-body  style="position: absolute; height:100%;"">
-                Panel content
-                </div>
-                
-                <div class="panel-footer">
-                    <div class="btn-group btn-group-lg" role="group">
-                        <button type="button" class="btn btn-default" aria-label="Left Align">
-                            <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-                        </button>
-                        <button type="button" class="btn btn-default" aria-label="Left Align">
-                            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                        </button>
-                        <button type="button" class="btn btn-default" aria-label="Left Align">
-                            <span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
-                        </button>
-                        <button type="button" class="btn btn-default" aria-label="Left Align">
-                            <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
-                        </button>
-                        <button type="button" class="btn btn-default" aria-label="Left Align">
-                            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                        </button>
-                    </div>
+
+<head>
+    <style>
+        ul > li {
+            display: inline-block;
+            margin-left: 25%;
+            /* This is when the drop down box appears */
+            width: auto;
+            position: relative;
+        }
+        
+        button {
+            white-space: normal;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Instagram</h3>
+            </div>
+            <div class="panel-body  style=" position: absolute; height:100%; "">
+                <div ui-view></div>
+            </div>
+
+
+            <div class="container">
+                <div class="btn-group btn-group-justified">
+                    <a href="#" class="btn btn-primary">Apple</a>
+                    <a href="#" class="btn btn-primary">Samsung</a>
+                    <a href="#" class="btn btn-primary">Sony</a>
                 </div>
             </div>
-        </div> <!-- /container -->
-<!--    <script type="text/javascript" src="js/login.js"></script>-->
-        <script type="text/javascript" src="app.js"></script>
-    </body>
+
+            <div class="panel-footer">
+                <div class="btn-group btn-group-lg" role="group">
+                    <button type="button" class="btn btn-default" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                    </button>
+                    <button type="button" class="btn btn-default" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    </button>
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-cloud-upload" aria-hidden="true"></span>
+                    </button>
+
+                    <ul class="dropdown-menu">
+                        <li>
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-default">
+                                    <span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
+                                </button>
+                                <button type="button" class="btn btn-default">
+                                    <span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>
+                                </button>
+                            </div>
+                        </li>
+                    </ul>
+                    <button type="button" class="btn btn-default" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+                    </button>
+                    <button type="button" class="btn btn-default" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /container -->
+    <script type="text/javascript" src="app.js"></script>
+</body>
+
 </html>

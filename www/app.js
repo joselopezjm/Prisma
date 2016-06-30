@@ -9,7 +9,7 @@ app.config(["$stateProvider", "$urlRouterProvider",
         $state
             .state("login", {
                 "url": "/login",
-                "templateUrl": "views/home.html",
+                "templateUrl": "views/login.html",
                 "controller": "LoginCtrl"
             })
             .state("home", {
@@ -97,7 +97,7 @@ app.controller("RegisterCtrl", ["$scope", "$http", "$state",
 app.controller("LoginCtrl", ["$scope", "$http", "$state",
 
     function ($scope, $http, $state) {
-       
+        $state.go('home.index');
         if (window.localStorage.getItem("token")) {
             $state.go('home.index');
         }
@@ -181,5 +181,3 @@ app.controller("TakePictureCtrl", ["$scope", "$http",
         }
     }
 ]);
-
-var test = 1;
