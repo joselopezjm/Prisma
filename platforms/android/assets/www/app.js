@@ -9,7 +9,7 @@ app.config(["$stateProvider", "$urlRouterProvider",
         $state
             .state("login", {
                 "url": "/login",
-                "templateUrl": "views/home.html",
+                "templateUrl": "views/login.html",
                 "controller": "LoginCtrl"
             })
             .state("home", {
@@ -27,26 +27,48 @@ app.config(["$stateProvider", "$urlRouterProvider",
                 "templateUrl": "views/take-picture.html",
                 "controller": "TakePictureCtrl"
             })
+            .state("home.upload", {
+                "url": "/upload",
+                "templateUrl": "views/upload.html",
+                "controller": "UploadCtrl"
+            })
             .state("register", {
                 "url": "/register",
                 "templateUrl": "views/register.html",
                 "controller": "RegisterCtrl"
+            })
+            .state("home.profile", {
+                "url": "/profile",
+                "templateUrl": "views/profile.html",
+                "controller": "ProfileCtrl"
             });
 
     }
 ]);
 
+app.controller("ProfileCtrl", ["$scope", "$http", "$state",
+
+    function ($scope, $http, $state) {
+        $scope.signout = function () {
+            window.localStorage.removeItem("token");
+            $state.go('login');
+        }
+
+    }
+
+]);
+
 app.controller("RegisterCtrl", ["$scope", "$http", "$state",
 
     function ($scope, $http, $state) {
-       
-       if (window.localStorage.getItem("token")) {
+
+        if (window.localStorage.getItem("token")) {
             $state.go('home.index');
         }
         $scope.register = function () {
 
             $.ajax({
-                url: "http://localhost:8080/Instagram_server/Signup",
+                url: "http://192.168.2.7:8080/Instagram_server/Signup",
                 type: "POST",
                 data: {
                     firstName: document.getElementById('inputn').value, // input  firt name del modal2
@@ -97,13 +119,13 @@ app.controller("RegisterCtrl", ["$scope", "$http", "$state",
 app.controller("LoginCtrl", ["$scope", "$http", "$state",
 
     function ($scope, $http, $state) {
-       
+        //        $state.go('home.index');
         if (window.localStorage.getItem("token")) {
             $state.go('home.index');
         }
         $scope.login = function () {
             $.ajax({
-                url: "http://localhost:8080/Instagram_server/Login",
+                url: "http://192.168.2.7:8080/Instagram_server/Login",
                 type: "POST",
                 data: {
                     nickname: document.getElementById('inputnnlogin').value, // input  birthday del modal2
@@ -143,31 +165,16 @@ app.controller("LoginCtrl", ["$scope", "$http", "$state",
 
 
 
-app.controller("HomeCtrl", ["$scope", "$http","$state",
-    function ($scope, $http,$state) {
-
-    }
-]);
-
-app.controller("IndexCtrl", ["$scope", "$http","$state",
-    function ($scope, $http,$state) {
-        $scope.signout = function(){
-            window.localStorage.removeItem("token");
+app.controller("HomeCtrl", ["$scope", "$http", "$state",
+    function ($scope, $http, $state) {
+        if (!window.localStorage.getItem("token")) {
             $state.go('login');
         }
-    }
-]);
-
-app.controller("TakePictureCtrl", ["$scope", "$http",
-    function ($scope, $http) {
-        $scope.myImg = {
-            src: ""
-        };
 
         function onSuccess(imageData) {
-            $scope.myImg.src = "data:image/jpeg;base64," + imageData;
-            $scope.$apply();
+            img.src = "data:image/jpeg;base64," + imageData;
         }
+
 
         function onFail(message) {
             alert('Failed because: ' + message);
@@ -182,4 +189,42 @@ app.controller("TakePictureCtrl", ["$scope", "$http",
     }
 ]);
 
-var test = 1;
+app.controller("IndexCtrl", ["$scope", "$http", "$state",
+    function ($scope, $http, $state) {
+        if (!window.localStorage.getItem("token")) {
+            $state.go('login');
+        }
+    }
+]);
+
+app.controller("TakePictureCtrl", ["$scope", "$http",
+    function ($scope, $http) {
+        var img = document.getElementById('img');
+    }
+]);
+
+app.controller("UploadCtrl", ["$scope", "$http",
+    function ($scope, $http) {
+        var img = document.getElementById('img');
+        var filebtn = document.getElementById("myFile");
+        filebtn.addEventListener("change", capturePhoto);
+
+        function capturePhoto() {
+            readURL(this);
+        }
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#img').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+
+    }
+]);

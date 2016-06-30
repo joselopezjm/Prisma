@@ -27,44 +27,34 @@
             </div>
 
 
-            <div class="container">
-                <div class="btn-group btn-group-justified">
-                    <a href="#" class="btn btn-primary">Apple</a>
-                    <a href="#" class="btn btn-primary">Samsung</a>
-                    <a href="#" class="btn btn-primary">Sony</a>
-                </div>
-            </div>
+
+
 
             <div class="panel-footer">
-                <div class="btn-group btn-group-lg" role="group">
-                    <button type="button" class="btn btn-default" aria-label="Left Align">
-                        <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-                    </button>
-                    <button type="button" class="btn btn-default" aria-label="Left Align">
-                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                    </button>
-                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Left Align">
-                        <span class="glyphicon glyphicon-cloud-upload" aria-hidden="true"></span>
-                    </button>
-
-                    <ul class="dropdown-menu">
-                        <li>
-                            <div class="btn-group" role="group">
-                                <button type="button" class="btn btn-default">
-                                    <span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
-                                </button>
-                                <button type="button" class="btn btn-default">
-                                    <span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>
-                                </button>
-                            </div>
-                        </li>
-                    </ul>
-                    <button type="button" class="btn btn-default" aria-label="Left Align">
-                        <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
-                    </button>
-                    <button type="button" class="btn btn-default" aria-label="Left Align">
-                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                    </button>
+                <div class="buttons">
+                    <div class="btn-group btn-group-justified">
+                        <a ui-sref="home" class="btn btn-default" role="button"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
+                        <a ui-sref="#" class="btn btn-default" role="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
+                        <div class="btn-group dropup">
+                            <a type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-cloud-upload" aria-hidden="true"></span> <span class="caret"></span>
+          </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <div class="btn-toolbar pagination-centered">
+                                        <div class="btn-group " role="group">
+                                            <a ui-sref="home.takePicture" class="btn btn-default" ng-click="takePicture()" role="button">
+                                                <span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
+                                            </a>
+                                            <a ui-sref="home.upload" class="btn btn-default" role="button">
+                                                <span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <a ui-sref="home.profile" class="btn btn-default" role="button"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
+                    </div>
                 </div>
             </div>
         </div>
