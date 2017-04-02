@@ -1,25 +1,43 @@
-<html>
-
 <body>
-    <div class="container">
-        <div class="jumbotron">
-            <h2 class="form-signin-heading">Register</h2>
-            <label for="inputn" class="sr-only">Name</label>
-            <input type="text" id="inputn" class="form-control" placeholder="Name" required autofocus>
-            <label for="inputln" class="sr-only">Lastname</label>
-            <input type="text" id="inputln" class="form-control" placeholder="Lastname" required>
-            <label for="inpute" class="sr-only">Email address</label>
-            <input type="email" id="inpute" class="form-control" placeholder="Email address" required autofocus>
-            <label for="inputlnn" class="sr-only">Nickname</label>
-            <input type="text" id="inputnn" class="form-control" placeholder="Nickname" required>
-            <label for="inputp" class="sr-only">Password</label>
-            <input type="password" id="inputp" class="form-control" placeholder="Password" required>
-            <button class="btn btn-lg btn-primary btn-block" type="submit" id="reg_button" ng-click="register()">Register</button>
-            <div id="register_alert2" class="alert alert-danger" role="alert" style="display:none"></div>
-        </div>
+    <div class="container" style="background:#1a1a1a; position:absolute;">
+        <hr style="width: 100%; height:2px; background-color:#CCCCCC;" />
+        <img src="img/title.png" style="width: 50%; heigth:65%; left:25%; top:50%; position:relative;">
+        <hr style="width: 100%; height:2px; background-color:#CCCCCC;" />
+        
+        <form id= "registrationForm" class="container" style="left:0; position:absolute;">
+            <div class="row row-centered pos">
+                <br>
+                <div class="col-lg-8 col-xs-12 col-centered">
+                    <input type="text" id="inputn" class="form-control" placeholder="Name" maxlength="15" required/>
+                    <div id="afn" style="color:#ff4d4d; width:100%;"></div>
+                    <br>
+                </div>
+                <div class="col-lg-8 col-xs-12 col-centered">
+                    <input type="text" id="inputln" class="form-control" placeholder="Lastname" maxlength="15" required/>
+                    <div id="aln" style="color: #ff9900; width:100%;"></div>
+                    <br>
+                </div>
+                <div class="col-lg-8 col-xs-12 col-centered">
+                    <input type="email" pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" id="inpute" class="form-control" placeholder="Email address" required/>
+                    <div id="ae" style="color:#70db70; width:100%;"></div>
+                    <br>
+                </div>
+                <div class="col-lg-8 col-xs-12 col-centered">
+                    <input type="text" id="inputnn" class="form-control" placeholder="Username" maxlength="14" style="text-transform: lowercase;" required/>
+                    <div id="ann" style="color:#8080ff; width:100%;"></div>
+                    <br>
+                </div>
+                <div class="col-lg-8 col-xs-12 col-centered">
+                    <input type="password" id="inputp" data-minlength="8" maxlength="30" class="form-control" placeholder="Password" required/>
+                    <div id="apw" style="color:#d279d2; width:100%;"></div>
+                    <br>
+                </div>
+            </div>
+        <button class="btn btn-lg btn-default btn-block" type="submit" style="color:white; background-color:#1a1a1a;" id="reg_button" ng-click="register()">Register</button>
+        <br>
+        <div id="register_alert2" class="alert alert-danger" role="alert" style="display:none"></div>
+        <hr style="width: 100%; height:2px; background-color:#CCCCCC" /> 
+        </form>           
     </div>
-    <!-- /container -->
     <script type="text/javascript" src="app.js"></script>
 </body>
-
-</html>

@@ -1,22 +1,36 @@
-<html>
-    <body>
-    <div class="container">
-        <div class="jumbotron">
-            <h2 class="form-signin-heading">Please sign in</h2>
-           <label for="inputnn" class="sr-only">Nickname</label>
-            <input type="text" id="inputnnlogin" class="form-control" placeholder="Nickname" required>
-            <label for="inputplogin" class="sr-only">Password</label>
-            <input type="password" id="inputplogin" class="form-control" placeholder="Password" required>
-            <div class="checkbox">
-              <label>
-                <input type="checkbox" value="remember-me"> Remember me
-              </label>
+<body>
+    <div class="container" style="background:#1a1a1a; position:absolute;">
+        <hr style="width: 100%; height:2px; background-color:#CCCCCC;" />
+        <img src="img/title.png" style="width: 50%; heigth:65%; left:25%; top:50%; position:relative;">
+        <hr style="width: 100%; height:2px; background-color:#CCCCCC;" />
+        
+        <form id= "registrationForm" class="container" style="left:0; position:absolute;">
+            <div class="row row-centered pos">
+                <br>
+                <br>
+                <br>
+                <br>
+                <div class="col-lg-8 col-xs-12 col-centered">
+                    <input type="text" id="inputnnlogin" class="form-control" placeholder="Username" required>
+                    <div id="alnn" style="color:#ff4d4d; width:100%;"></div>
+                    <br>
+                </div>
+                <div class="col-lg-8 col-xs-12 col-centered">
+                    <input type="password" id="inputplogin" class="form-control" placeholder="Password" required>
+                    <div id="alpw" style="color: #ff9900; width:100%;"></div>
+                    <br>
+                </div>
             </div>
-            <button class="btn btn-lg btn-primary btn-block" type="submit" id="login_button" ng-click="login()">Sign in</button>  
+            <br>
+            <button class="btn btn-lg btn-primary btn-block" type="submit" style="color:white; background-color:#1a1a1a;" id="login_button" ng-click="login()">Sign in</button>  
+            <br>
             <a ui-sref="register">Don't have an account?</a>
-        </div>
-    </div> <!-- /container -->
-<!--        <script type="text/javascript" src="js/login.js"></script>-->
-        <script type="text/javascript" src="app.js"></script>
-    </body>
-</html>
+            <br>
+            <br>
+            <div id="register_alert" class="alert alert-danger" role="alert" style="display:none"></div>
+            <br>
+            <hr style="width: 100%; height:2px; background-color:#CCCCCC" /> 
+        </form>           
+    </div>
+    <script type="text/javascript" src="app.js"></script>
+</body>

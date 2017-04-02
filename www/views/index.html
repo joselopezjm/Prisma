@@ -1,4 +1,41 @@
-<div>
-    Publishes
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div class="row" ng-repeat="x in publish">
+    <div class="col-sm-8 col-sm-offset-2">
+        <div ng-if="x.media_publish != undefined">
+            <div class="panel panel-default">
+                <div class="panel-heading" style="background:#1a1a1a; color:white;">
+                    <h3 class="panel-title" style="font-weight: bold;">{{x.nickname_app_user}}</h3>
+                    <h1 class="panel-title text-right" style="font-style: italic; font-size: 80%;">
+                        <span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
+                        {{x.location_publish}}
+                    </h1>
+                </div>
+                
+                <div class="panel-body">
+                    <div ng-if="x.media_type_publish == 'image'">
+                        <img ng-src="{{x.media_publish}}" alt="" id="{{x.id_publish}}" class="img-thumbnail" width="100%"></img>
+                    </div>
+                    <div ng-if="x.media_type_publish == 'video'">
+                        <video ng-src="{{x.media_publish}}" type="video/mp4" alt="" id="{{x.id_publish}}" class="img-thumbnail" width="100%" controls="true"></video>
+                    </div>
+                    <div ng-if="x.media_type_publish == 'audio'">
+                        <audio ng-src="{{x.media_publish}}" alt="" id="{{x.id_publish}}" class="img-thumbnail" width="50%" controls="true"></audio>
+                    </div>
+                </div>
+            
+                <div class="panel-footer" style="background:#1a1a1a; color:white;">
+                    <div id="likes{{x.id_publish}}">
+                        <div ng-show="x.user_like == false">
+                            <img class="imgc{{x.id_publish}}"id="imglike{{x.id_publish}}" src="./resources/like.png" style="width=30px; height:30px; top:0%; position:relative; cursor:pointer;" ng-click="like(x,1)"></img>
+                        {{x.likes}} likes
+                        </div>
+                        <div ng-show="x.user_like == true">
+                            <img class="imgc{{x.id_publish}}"id="imglike{{x.id_publish}}" src="./resources/like2.png" style="width=30px; height:30px;cursor:pointer; top:0%; position:relative;" ng-click="like(x,0)"></img>
+                        {{x.likes}} likes
+                        </div>
+                    </div>
+                    <textarea class="form-control" placeholer="Message" style=" border:#1a1a1a; overflow-y: scroll; background:#1a1a1a; color:white;resize: none; overflow: auto;" readonly>{{x.description_publish}}</textarea>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

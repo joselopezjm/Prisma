@@ -1,28 +1,40 @@
 <div>
-    Profile
-    <a ui-sref="home" class="btn btn-default" role="button"><span  aria-hidden="true" ng-click="signout()">Log out</span></a>
-    <!--    No lo borres, dejalo mientras lo colocamos donde va-->
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+    <button ui-sref="login" class="btn btn-lg btn-primary btn-block" style="color:white; background-color:#1a1a1a;" id="labelup1" ng-click="signout()">Log out</button>
+    <hr style="width: 100%; height:2px; background-color:#CCCCCC" /> 
+    <p id="tnn" style="text-align:center;font-weight: bold;">{{nickname}}'s Information</p>
+    <p class="text-left"><code>Name:</code> {{name}} {{lastname}}</p>
+    <p class="text-left"><code>Email:</code> {{email}}</p>
+    
+    <div id="profile" class="row" ng-repeat="x in publish">
+        <div class="col-sm-8 col-sm-offset-2">
+            <div ng-if="x.media_publish != undefined">
+                <div class="panel panel-default">
+                    <div class="panel-heading" style="background:#1a1a1a; color:white;">
+                        <h3 class="panel-title" style="font-weight: bold;">{{x.nickname_app_user}}</h3>
+                        <h1 class="panel-title text-right" style="font-style: italic; font-size: 80%;">
+                            <span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
+                            {{x.location_publish}}
+                        </h1>
+                    </div>
 
+                    <div class="panel-body">
+                        <div ng-if="x.media_type_publish == 'image'">
+                            <img ng-src="{{x.media_publish}}" alt="" id="{{x.id_publish}}" class="img-thumbnail" width="100%"></img>
+                        </div>
+                        <div ng-if="x.media_type_publish == 'video'">
+                            <video ng-src="{{x.media_publish}}" alt="" id="{{x.id_publish}}" width="100%" controls="true"></video>
+                        </div>
+                        <div ng-if="x.media_type_publish == 'audio'">
+                            <audio ng-src="{{x.media_publish}}" alt="" id="{{x.id_publish}}" class="img-thumbnail" width="50%" controls="true"></audio>
+                    </div>
+                    </div>
 
+                    <div class="panel-footer" style="background:#1a1a1a; color:white;">
+                        <textarea class="form-control" placeholer="Message" style=" border:#1a1a1a; overflow-y: scroll; background:#1a1a1a; color:white;resize: none; overflow: auto;" readonly>{{x.description_publish}}</textarea>
+                        {{x.likes}} Likes
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

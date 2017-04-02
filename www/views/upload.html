@@ -1,22 +1,27 @@
-<div>
-    <h2 class="text-center">upload file</h2>
-    <div class="row">
-        <div class="col-sm-8 col-sm-offset-2">
-            <div class="container">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Username</h3>
-                    </div>
-                    <div class="panel-body  style=" position: absolute; height:100%; "">
-                        <img src="" alt="" id="img" class="img-thumbnail"  width="100%"></img>
-                        <input type="file" id="myFile"  ng-model="file">
-                    </div>
-
-                    <div class="panel-footer">
-
-                    </div>
-                </div>
-            </div>
+<div class="container">
+    <br>
+    <br>
+    <div class="row row-centered pos">
+        <div class="col-lg-8 col-xs-12 col-centered">
+            <p class="text-center">Choose a file from your computer</p>
+            <br>
+            <img src="" alt="" id="img" class="img-responsive" style="display:none"></img>
+            <video src="" alt="" id="vid" class="img-thumbnail" width="100%" controls="true" style="display:none"></video>
+            <label class="btn btn-default btn-file" id="labelup">
+                Browse
+                <input type="file" id="myFile" style="display:none">
+            </label>
+            <div id="albr" style="color:#ff4d4d; width:100%;"></div>
+            <br>
+        </div>
+        <div class="col-lg-8 col-xs-12 col-centered">
+            <textarea placeholder="Write a description here..." id="desc" class="form-control" placeholer="Message" style=" resize: none;"></textarea>
+            <div id="alta" style="color: #ff9900; width:100%;"></div>
         </div>
     </div>
+    <br>
+<div id="loading-bar-container"></div>
+    <button class="btn btn-lg btn-primary btn-block" style="color:white; background-color:#1a1a1a;" id="labelup" ng-click="upload()">Publish</button>
+    <br>
+    <div id="register_alert6" class="alert alert-danger" role="alert" style="display:none"></div>
 </div>

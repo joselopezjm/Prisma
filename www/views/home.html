@@ -13,48 +13,53 @@
         button {
             white-space: normal;
         }
+        
+        .ng-scope{
+            margin-top: 7%;
+            margin-bottom: 7%;
+        }
+        
+        /* Styles go here */
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">Instagram</h3>
-            </div>
-            <div class="panel-body  style=" position: absolute; height:100%; "">
-                <div ui-view></div>
-            </div>
+    <div class="panel panel-default">
+        
+        <div class="panel-heading" style="position:fixed; top:0; width:100%; z-index:100; background:#1a1a1a;" >
+            <img src="img/title.png" style="width: 30%; heigth:45%; left:0%; top:0%; position:relative;">
+        </div>
+        
+        <div class="panel-body block" style="position:relative;">
+            <div id="content" class="block" ui-view></div>
+        </div>
 
-
-
-
-
-            <div class="panel-footer">
-                <div class="buttons">
-                    <div class="btn-group btn-group-justified">
-                        <a ui-sref="home" class="btn btn-default" role="button"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
-                        <a ui-sref="#" class="btn btn-default" role="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
-                        <div class="btn-group dropup">
-                            <a type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-cloud-upload" aria-hidden="true"></span> <span class="caret"></span>
-          </a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li>
-                                    <div class="btn-toolbar pagination-centered">
-                                        <div class="btn-group " role="group">
-                                            <a ui-sref="home.takePicture" class="btn btn-default" ng-click="takePicture()" role="button">
-                                                <span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
-                                            </a>
-                                            <a ui-sref="home.upload" class="btn btn-default" role="button">
-                                                <span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>
-                                            </a>
-                                        </div>
+        <div class="panel-footer navbar-fixed-bottom" style="background:#1a1a1a;">
+            <div class="buttons">
+                <div class="btn-group btn-group-justified">
+                    <a ui-sref="home" class="btn btn-default" role="button"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
+                    <a ui-sref="home.search" class="btn btn-default" role="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
+                    <div class="btn-group dropup">
+                        <a type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-cloud-upload" aria-hidden="true"></span> <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <div class="btn-toolbar pagination-centered">
+                                    <div>
+                                        <a ui-sref="home.takePicture" class="btn btn-default" ng-click="takePicture()" role="button">
+                                            <span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
+                                        </a>
+                                        <a ui-sref="home.upload" class="btn btn-default" role="button" ng-click="reset()">
+                                            <span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>
+                                        </a>
                                     </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <a ui-sref="home.profile" class="btn btn-default" role="button"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
+                    <a ui-sref="home.profile" class="btn btn-default" role="button">
+                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                    </a>
                 </div>
             </div>
         </div>
